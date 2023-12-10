@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<style>
+/*UNIVERSAL STYLES*/
+
+* { 
+	box-sizing: border-box;
+}
+html, body {
+	min-height: 100%;
+	background: #fff;
+	color: #000;
+}
+	/* sets the body height of the browser, so that backgrounds and div heights work correctly. Color and background will almost certainly be altered; they are just placeholders */
+	
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.4rem;
+	text-rendering: optimizeLegibility;
+	margin: 2%;
+}
+
+article, aside, audio, 
+footer, header, nav, section, video {
+	display: block; 
+	}
+	
+	/* ensures that older browsers will display HTML5 elements correctly */
+
+h1, h2, h3, h4 {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.5em;
+}
+		
+img { 
+	border: none;
+	max-width: 100%;
+}
+	/* removes outlines from linked images (for older browsers and IE), sets up images for responsive design layout */
+
+.section-title {
+	text-align: center;
+	font-size: 3rem;
+	padding-top: 1.5rem;
+}
+
+
+/*HEADER*/
+
+header {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	height: 100%;
+}
+
+.header {
+	width: 100%;
+	text-align: center;
+	font-size: 3.5em;
+	margin: 0;
+	padding-top: 2%;
+}
+
+.logo {
+	width: 15%;
+	justify-content: center;
+}
+
+.navbar {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	background-color: #00302A;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border: solid 2px #000000;
+}
+
+a {
+	text-decoration: none;
+	width: 100%;
+	font-weight: 700;
+	outline: none;
+	text-align: center;
+	line-height: 3;
+	color: #000000;
+	transition-duration: 0.4s;
+}
+
+a:link,
+a:visited,
+a:focus {
+	color: #ffffff;
+}
+
+a:hover {
+	background: #005449;
+}
+
+a:active {
+	background: #005449;
+	outline-style: dotted;
+	outline-color: #001F1B;
+	outline-offset: -4px;
+	transition-duration: 0s;
+}
+
+a.left-nav-button:hover,
+a.left-nav-button:active,
+a.left-nav-button:visited {
+	border-top-left-radius: 20px;
+}
+
+a.right-nav-button:hover,
+a.right-nav-button:active
+a.left-nav-button:visited {
+	border-top-right-radius: 20px;
+}
+
+.active-page {
+	background: #005449;
+	border-top-left-radius: 20px;
+}
+
+
+/*HERO SECTION*/
+
+.hero {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero::before {
+	content: "";
+	background-image: url('http://www.thoughtfulminds.org/wp-content/uploads/2014/08/web.jpg');
+	background-size: cover;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	opacity: 0.7;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+     border: solid 2px #000000;
+     border-top: none;
+}
+
+.hero-description {
+	position: relative;
+	color: #000000;
+	font-size: 2rem;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.hero-description h2 {
+	font-family: 'Pacifico', cursive;
+	font-weight: 200;
+	font-size: 3.5rem;
+}
+
+
+/*ABOUT*/
+
+.about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.owner-image {
+	width: 250px;
+	border-radius: 50%;
+	border: solid 2px #000000;
+	margin-bottom: 0px;
+}
+
+.about-description {
+	margin: 40px 0;
+	font-size: 1.6rem;
+	width: 60%;
+}
+
+.about-images {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.about-images a {
+	text-decoration: none;
+	width: auto;
+	font-weight: normal;
+	outline: none;
+	text-align: center;
+	line-height: 1;
+	color: #000000;
+	transition-duration: 0.4s;
+}
+
+.about-images a:link,
+.about-images a:visited,
+.about-images a:focus {
+	color: #000000;
+}
+
+.about-images a:hover {
+	background: #ffffff;
+	transform: translate(0, -5%);
+}
+
+.about-images-item {
+	margin: 2%;
+	color: #00302A;
+}
+
+.about-image {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	border: solid 2px #000000;
+}
+
+.about-image:hover {
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/*INTERNSHIP DETAILS*/
+
+.internship-details {
+	background: #33001a;
+	color: #ffffff;
+	margin-top: 5%;
+	border-radius: 20px;
+}
+
+.Web development Intern {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.items-title {
+	width: 100%;
+	text-align: center;
+	font-size: 1.7em;
+}
+
+.item {
+	width: 400px;
+	margin: 0 5% 3% 5%;
+}
+
+.item img {
+	width: 400px;
+	height: 400px;
+	border-radius: 20px;
+	border: solid 2px #000000;
+}
+
+.price {
+	font-weight: 600;
+}
+
+
+/*LOCATION*/
+
+.google-map {
+     padding-bottom: 50%;
+     position: relative;
+     border-radius: 20px;
+     border: solid 2px #000000;
+}
+
+.google-map iframe {
+     height: 100%;
+     width: 100%;
+     left: 0;
+     top: 0;
+     position: absolute;
+     border-radius: 20px;
+}
+
+
+/*CONTACT*/
+
+.contact {
+	background-color: #00302A;
+	color: #ffffff;
+	text-align: center;
+	border-radius: 20px;
+}
+
+.contact a:active,
+.contact a:hover {
+	padding: 0.5em;
+	border-radius: 20px;
+}
+
+.footer {
+	padding-top: 2em;
+	padding-bottom: 1.5rem;
+}
+
+
+/*MEDIA QUERIES*/
+
+/*Small (Mobile) Screens (480px & smaller)*/
+@media screen and (max-width: 480px) {
+
+	.header {
+		font-size: 1.9em;
+	}
+
+	.logo {
+		width: 20%;
+	}
+
+	.navbar {
+		flex-direction: column;
+	}
+
+	.hero {
+		height: 50vh;
+	}
+
+	.hero-description {
+		font-size: 1.4rem;
+	}
+
+	.hero-description h2 {
+		font-size: 2.5rem;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+	}
+
+	.owner-image {
+		width: 150px;
+	}
+
+	.about-description {
+		width: 100%;
+		margin: 20px 0;
+	}
+
+	.about p {
+		font-size: 0.8em;
+	}
+
+	.about-images {
+		flex-direction: column;
+	}
+
+	.about-images-item h3 {
+		font-size: 1.2em;
+	}
+
+	.about-image {
+		width: 200px;
+		height: 200px;
+	}
+
+	.items-title {
+		font-size: 1.3em;
+	}
+
+	.mobile-span {
+		display: inline-flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.mobile-span.item-description {
+		width: 60%;
+	}
+
+	div.mobile-span {
+		font-size: 0.8em;
+		margin: 0 0 5% 0;
+	}
+
+	div.price {
+		margin-left: 5%;
+	}
+
+	.item {
+		margin-bottom: 5%;
+		width: 350px;
+	}
+
+	.item img {
+		width: 350px;
+		height: 350px;
+	}
+
+	.contact a {
+		font-size: 1.3rem;
+	}
+}
+
+
+/*Medium (Tablet) Screens (480px to 768px)*/
+@media screen and (min-width: 480px) and (max-width: 768px) {
+
+	.header {
+		font-size: 2.5em;
+	}
+
+	.logo {
+		width: 25%;
+	}
+
+	.hero {
+		height: 70vh;
+	}
+
+	.navbar {
+		flex-direction: column;
+	}
+
+	.hero-description {
+		font-size: 1.4rem;
+	}
+
+	.hero-description h2 {
+		font-size: 2.5rem;
+	}
+
+	.owner-image {
+		width: 175px;
+	}
+
+	.about-description {
+		width: 100%;
+	}
+
+	.about p {
+		font-size: 0.9em;
+	}
+
+	.about-images {
+		flex-direction: column;
+	}
+
+	.about-images-item h3 {
+		font-size: 1.4em;
+	}
+
+	.about-image {
+		width: 250px;
+		height: 250px;
+	}
+
+	.section-title {
+		font-size: 2.6rem;
+	}
+
+	.items-title {
+		font-size: 1.5em;
+	}
+
+	.mobile-span {
+		display: inline-flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.mobile-span.item-description {
+		width: 60%;
+	}
+
+	div.mobile-span {
+		font-size: 0.8em;
+		margin: 0 0 5% 0;
+	}
+
+	div.price {
+		margin-left: 5%;
+	}
+
+	.item {
+		margin-bottom: 5%;
+		width: 294px;
+	}
+
+	.item img {
+		width: 294px;
+		height: 294px;
+	}
+
+	.contact a {
+		font-size: 1.2rem;
+	}
+
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cognifyz Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu:700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7d95cd1ec0.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+<!-- HEADER -->
+
+    <header>
+
+      <h1 class="header">INTERNSHIP OPPORTUNITY</h1>
+
+      <img class="logo" src="https://tse2.mm.bing.net/th?id=OIP.WpPS8k5P1wlH1i6fshyMWgHaCV&pid=Api&P=0&h=180" alt="COGNIFYZ LOGO"/>
+
+      <nav class="navbar">
+          <a href="#home" class="left-nav-button active-page">HOME</a>
+          <a href="#about">ABOUT</a>
+          <a href="#internship-details">INTERNSHIP-DETAILS</a>
+          <a href="#location">LOCATION</a>
+          <a href="#contact" class="right-nav-button">CONTACT</a>
+      </nav>
+
+    </header>
+
+<!-- HERO SECTION -->
+
+    <div class="hero">
+
+      <div class="hero-description">
+        <h2>Cognifyz Technologies provide an Increadiable Opportunity To a Students</h2>
+
+        <p>INTERNSHIP DOMAIN: WEB DEVELOPMENT </p>
+      </div>
+
+    </div>
+
+<!-- ABOUT -->
+
+    <section class="about" id="about">
+
+      <h2 class="section-title">ABOUT</h2>
+
+      <p>Web Developer : Sakshi Gholap</p>
+
+      <img class="owner-image" src="C:\Users\shwet\Downloads\IMG_20231008_125624_475.jpg" alt="Owner"/> 
+
+      <p class="about-description">Greeting from Cognifyz Technologies!!! We are excited to announce that we are currently hiring interns for a paid internship opportunity. 🌟
+At Cognifyz Technologies, we offer internships in Web Development, providing you with valuable hands-on experience. Here are the dom.</p>
+      <p class="about-description">DON'T MISSED OUT THE INCREDIABLE OPPORTUNITIES...!!!</p>
+      <p class="about-description">!!..REGISTER HERE..!!</p><a href="https://lnkd.in/gAR4n59S">https://lnkd.in/gAR4n59S</a></br>
+
+
+      </div>
+
+    </section>
+
+<!-- INTERNSHIP DETAILS -->
+
+    <section class="internship-details" id="internship-details">
+      
+      <h2 class="section-title">INTERNSHIP DETAILS</h2>
+
+      <div class="" id="Web development Intern"
+
+        <center><h3 class="items-title">Web development Intern</h3></center>
+
+        <center><div class="item">
+          <img src="C:\Users\shwet\Downloads\Image1.jpg" alt="Weekly Hours: Flexible work per week"/>
+          <div class="mobile-span">
+            <div class="item-description">Location: Remote Work</div>
+            <div class="Internship Duration">DURATION : 1 month</div> 
+          </div>         
+        </div></center>
+
+        <center><div class="item">
+          <img src="C:\Users\shwet\Downloads\Image2.jpg" alt="After Completing an Internship"/>
+          <div class="mobile-span">
+          <div class="item-description">After completing the first month of your internship, you will be required to go through an interview process. If you successfully pass the interview, you will be eligible for a performance-based stipend ranging from 10,000 to 15,000 Rupees. This stipend will be a reflection of your dedication, skills, and overall performance during your internship.
+</div>
+          </div></center>          
+
+        <center><div class="item">
+          <img src="C:\Users\shwet\Downloads\Image3.jpg" alt="Web developer image"/>
+          <div class="mobile-span">
+            <div class="item-description">At the end of the internship, if you wish to apply for the interview process, there will be a registration cost of 249/-. This fee covers the administrative expenses associated with the interview process, ensuring a fair and structured evaluation of candidates. However, if you choose not to participate in the interview process, you have the option to pay 149/- and obtain your Internship Completion Letter and Recommendation Letter.
+ </div>
+          </div></center>
+
+        </div>
+
+      </div>
+
+    </section>
+
+<!-- LOCATION -->
+
+    <section class="location" id="location">
+
+      <h2 class="section-title">LOCATION</h2>
+
+      <div class="google-map">
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d145778.70574741717!2d-115.16432643337846!3d36.15962532938097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1689817830845!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      </div>
+
+    </section>
+
+<!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+      <h2 class="section-title">CONTACT</h2>
+
+      <a href="mailto:gholapsakshi80@gmail.com">contact: gholapsakshi80@gmail.com</a></br>
+
+      <a href="tel:+91 91367 56960">+91 91367 56960</a></br>
+
+      <a href="https://cognifyz.com/" target="_blank">Cognifyz Technologies</a>
+
+      <p class="footer"><i class="fa-regular fa-copyright" style="color: #ffffff;"></i> COGINFYZ TECHNOLOGIES 2023</p>
+
+    </section>
+
+  <script>
+
+  </script>
+  </body>
+</html>
+
